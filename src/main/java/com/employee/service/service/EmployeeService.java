@@ -33,4 +33,14 @@ public class EmployeeService {
 		return e;
 	}
 
+	public int update(int id, Employee employee) {
+		return employeeRepo.update(id,employee);
+		
+	}
+
+	public int delete(int id) {
+		return employeeRepo.delete(id);
+		
+	}
+
 }

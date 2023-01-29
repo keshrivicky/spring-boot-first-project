@@ -29,6 +29,15 @@ public class EmployeeRepo {
 		// TODO Auto-generated method stub
 		return jdbcTemplate.update("insert into employee (emp_name,email_id,password) VALUES ('"+employee.getEmpName()+"','"+employee.getEmailId()+"','"+employee.getPassword()+"') ");
 		
+	}
+
+	public int update(int id, Employee employee) {
+		return jdbcTemplate.update("update employee SET emp_name='"+employee.getEmpName()+"',email_id='"+employee.getEmailId()+"',password='"+employee.getPassword()+"' WHERE emp_id="+id);
+		
+	}
+
+	public int delete(int id) {
+		return jdbcTemplate.update("delete from employee WHERE emp_id="+id);
 	}	
 
 }
