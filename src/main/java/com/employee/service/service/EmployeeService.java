@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.employee.service.exception.EmployeeNameIsInvalid;
 import com.employee.service.model.Employee;
 import com.employee.service.repo.EmployeeRepo;
 @Service
@@ -28,6 +29,7 @@ public class EmployeeService {
 
 	public Employee save(Employee employee) {
 		Employee e= employee;
+		
 		e.setEmpName(employee.getEmpName()+ " " +"kumar");
 		int i =employeeRepo.save(e);
 		return e;

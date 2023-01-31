@@ -21,8 +21,13 @@ public class EmployeeRepo {
 	}
 
 	public Employee findById(int id) {
+		//int count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM employee WHERE emp_id="+id,Integer.class);
+		//System.out.println("count ---"+count);
+		//if(count>0)
 		return jdbcTemplate.queryForObject("SELECT * FROM employee WHERE emp_id="+id, new BeanPropertyRowMapper<Employee>(Employee.class));
-
+	//else {
+		//	return new Employee();
+		//}
 	}
 
 	public int save(Employee employee) {
